@@ -10,7 +10,7 @@ function NavBar(props) {
         <div>
           <ToggleDrawerButton click={props.drawerClickHandler}></ToggleDrawerButton>
         </div>
-        <div className="navbar_logo"><a href="/">LOGO</a></div>
+        <div className="navbar_logo"><a href="/">Vita</a></div>
         <div className="spacer"></div>
         <div className="navbar_items">
           <ul>

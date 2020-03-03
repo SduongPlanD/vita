@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+#library
+**/library
+
+
 # testing
 /coverage
 

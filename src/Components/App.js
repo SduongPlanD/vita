@@ -4,9 +4,9 @@ import HomePage from './HomePage/HomePage.js';
 import NavBar from './NavBar/NavBar.js';
 import SideDrawer from './NavBar/SideDrawer/SideDrawer.js';
 import Backdrop from './Backdrop/Backdrop.js';
+import MealLibrary from './MealLibrary/MealLibrary.js';
 
 import './App.css';
-
 
 class App extends Component {
   state = {
@@ -37,6 +37,7 @@ class App extends Component {
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
         < HomePage ></HomePage>
+        <MealLibrary />
         <p>the is the info on current page</p>
       </div>
     );
