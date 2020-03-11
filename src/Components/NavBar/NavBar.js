@@ -14,13 +14,13 @@ function NavBar(props) {
         <div className="spacer"></div>
         <div className="navbar_items">
           <ul>
-            <li><a href="/">Home Page</a></li>
-            <li><a href="/">Meals</a></li>
-            <li><a href="/">Cook Book</a></li>
+            <li><a data-id="Today" onClick={props.currentPage}>Today</a></li>
+            <li><a data-id="Meal Library" onClick={props.currentPage}>Meal Library</a></li>
+            <li><a data-id="History" onClick={props.currentPage}>History</a></li>
           </ul>
         </div>
       </nav>
-    </header>
+    </header >
   )
 }
 

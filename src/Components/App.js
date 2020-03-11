@@ -11,9 +11,7 @@ import './App.css';
 class App extends Component {
   state = {
     sideDrawerOpen: false,
-    tempData: 'blank',
-    response: '',
-    post: '',
+    currentPage: 'Today',
     responseToPost: '',
   }
   componentDidMount() {
@@ -57,19 +55,35 @@ class App extends Component {
     });
   };
 
+  navBarClickHandler = (e) => {
+    let clicked = e.currentTarget.dataset.id
+    this.setState(() => {
+      return { currentPage: clicked }
+    })
+  }
+
   render() {
-    let backDrop;
+    let backDrop, activeTab;
 
     if (this.state.sideDrawerOpen) {
       backDrop = <Backdrop click={this.backDropClickHandler} />
     }
+
+    //logic for current Page
+    activeTab = 'MealLibrary'
+    if (this.state.currentPage === 'Today') {
+      activeTab = <HomePage />;
+    } else if (this.state.currentPage === 'Meal Library') {
+      activeTab = <MealLibrary />;
+    } else if (this.state.currentPage === 'History') {
+      activeTab = 'History'
+    }
     return (
       <div className="App" style={{ height: '100%' }}>
-        <NavBar drawerClickHandler={this.toggleDrawerClickHandler}></NavBar>
+        <NavBar drawerClickHandler={this.toggleDrawerClickHandler} currentPage={this.navBarClickHandler}></NavBar>
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
-        < HomePage ></HomePage>
-        <MealLibrary />
+        {activeTab}
         <p>{this.state.response}</p>
       </div>
     );

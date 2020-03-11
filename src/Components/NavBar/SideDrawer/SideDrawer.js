@@ -9,9 +9,9 @@ function SideDrawer(props) {
   }
   return (<nav className={drawerClasses}>
     <ul>
-      <li><a href="/">Home Page</a></li>
-      <li><a href="/">Meals</a></li>
-      <li><a href="/">Cook Book</a></li>
+      <li><a href="/">Today</a></li>
+      <li><a href="/">Meal Library</a></li>
+      <li><a href="/">History</a></li>
     </ul>
   </nav>
   )
